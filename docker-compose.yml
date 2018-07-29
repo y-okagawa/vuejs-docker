@@ -1,0 +1,13 @@
+version: "3"
+services:
+  frontend:
+    build:
+      ./docker/node
+    volumes:
+      - ./app:/vuejs
+    working_dir: /vuejs
+    ports:
+      - 80:8080
+    command: yarn serve
+
+# docker-compose run --rm --no-deps frontend sh
